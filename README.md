@@ -5,6 +5,8 @@
 
 在线阅读：https://liu-yang-maker.github.io/matrix-analysis/
 
+[>>前往教程首页](./docs/index.md)
+
 #### 项目初衷
 
 本课程讲授和讨论矩阵分析的主要理论。
