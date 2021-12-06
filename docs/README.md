@@ -1,9 +1,9 @@
 # matrix-analysis
 矩阵分析与 AI
 
-
-
 在线阅读：https://liu-yang-maker.github.io/matrix-analysis/
+
+[>>前往教程首页](index.md)
 
 #### 项目初衷
 
