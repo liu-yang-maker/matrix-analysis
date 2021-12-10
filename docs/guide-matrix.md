@@ -38,8 +38,7 @@
    2. 列空间、行空间、零空间
    3. 子空间方法
 6. [深度学习中的矩阵计算](Matrix-Calculus.md)
-
-
+7. [Lyapunov equations](Lyapunov-equations.md)
 
 专题
 
