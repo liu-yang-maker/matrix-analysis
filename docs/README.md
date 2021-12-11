@@ -47,6 +47,12 @@
 
 
 
+专题
+
+- [矩阵的特征向量和特征值](矩阵的特征向量和特征值.md)
+- [Lyapunov equations](Lyapunov-equations.md)
+- [深度学习中的矩阵计算](Matrix-Calculus.md)
+
 ------
 
 

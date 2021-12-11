@@ -37,11 +37,10 @@
    1. 子空间的一般理论
    2. 列空间、行空间、零空间
    3. 子空间方法
-6. [深度学习中的矩阵计算](Matrix-Calculus.md)
-7. [Lyapunov equations](Lyapunov-equations.md)
 
 专题
 
 - [矩阵的特征向量和特征值](矩阵的特征向量和特征值.md)
-- 
+- [Lyapunov equations](Lyapunov-equations.md)
+- [深度学习中的矩阵计算](Matrix-Calculus.md)
 

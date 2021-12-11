@@ -5,8 +5,6 @@
 
 在线阅读：https://liu-yang-maker.github.io/matrix-analysis/
 
-[>>前往教程首页](./docs/index.md)
-
 #### 项目初衷
 
 本课程讲授和讨论矩阵分析的主要理论。
@@ -46,6 +44,14 @@
    1. 子空间的一般理论
    2. 列空间、行空间、零空间
    3. 子空间方法
+
+
+
+专题
+
+- 矩阵的特征向量和特征值
+- Lyapunov equations
+- 深度学习中的矩阵计算
 
 
 

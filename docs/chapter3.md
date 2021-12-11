@@ -114,46 +114,108 @@ $$
 
 ### 奇异值分解定理
 
-...
+设 $A$ 为 $m \times n$ 阶矩阵，$q=\min(m, n)$，$A^HA$ 的 $q$ 个非负特征值的算术平方根叫作 $A$ 的奇异值。奇异值分解是线性代数和矩阵论中一种重要的矩阵分解法，适用于信号处理和统计学等领域。
+
+**奇异值分解**：令 $A \in \R^{m \times n}$，则存在正交矩阵 $U \in \R^{m \times m}$ 和 $V \in \R^{n \times n}$ 使得 $A = U \Sigma V^T$，其中 $\Sigma=\left[\begin{array}{ll}
+\Sigma_{1} & O \\
+O & O
+\end{array}\right]$，且 $\Sigma_1 = diag(\sigma_1,\cdots,\sigma_r)$，其对角元素有大到小排列，$r = rank(A)$.
 
 ### 关于奇异值分解定理的证明
 
-...
+...（暂略）
 
 ### 关于奇异值分解的几点解释
 
-...
+- $V \in \R^{n \times n}$ 为酉矩阵，用 $V$ 右乘 $V \in \R^{n \times n}$，得到 $AV = U\Sigma$，其向量形式为：
+  $$
+  \boldsymbol{A} \boldsymbol{v}_{i}=\left\{\begin{array}{ll}
+  \sigma_{i} \boldsymbol{u}_{i}, & i=1,2, \cdots, r \\
+  0, & i=r+1, r+2, \cdots, n
+  \end{array}\right.
+  $$
+  因此，$V$ 的列向量 $v_i$ 称为矩阵 $A$ 的右奇异向量(right singular vector)，$V$ 称为 $A$ 的右奇异向量矩阵(right singular vector matrix)。
+
+- 对 $U$​ 同理，$U \in \R^{m \times m}$ 为酉矩阵，用 $U^H$ 左乘 $V \in \R^{n \times n}$，得到 $U^HA = \Sigma V$，其向量形式为：
+  $$
+  \boldsymbol{u}_{i}^{\mathrm{H}} \boldsymbol{A}=\left\{\begin{array}{ll}
+  \sigma_{i} \boldsymbol{v}_{i}^{\mathrm{T}}, & i=1,2, \cdots, r \\
+  0, & i=r+1, r+2, \cdots, n
+  \end{array}\right.
+  $$
+  因此，$U$ 的列向量 $u_i$ 称为矩阵 $A$ 的左奇异向量(right singular vector)，$U$ 称为 $A$ 的左奇异向量矩阵(right singular vector matrix)。
+
+- 由奇异值分解公式可以得到：$AA^H = U\Sigma^2U^H$.
+
+  这表明 $m\times n$ 矩阵 $A$ 的奇异值 $\sigma_i$ 是矩阵乘积 $AA^H$ 的特征值(这些特征值是非负的)的正平方根。
+
+**定理**：令 $A \in \C^{m \times n}$ 的奇异值为：
+$$
+\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_n \geq 0
+$$
+则：
+$$
+\sigma_{k}=\min _{\boldsymbol{E} \in \mathbb{C}^{m \times n}}\left\{\|\boldsymbol{E}\|_{\mathrm{F}}: \operatorname{rank}(\boldsymbol{A}+\boldsymbol{E}) \leqslant k-1\right\}, k=1, \cdots, n
+$$
+并且存在一个满足 $\|E_k\|_F = \sigma_k$ 的误差矩阵 $E$ 使得：
+$$
+\operatorname{rank}\left(\boldsymbol{A}+\boldsymbol{E}_{k}\right)=k-1, \quad k=1,2, \cdots, n
+$$
+定理表明：奇异值 $\sigma_k$ 与使得原矩阵 $A$ 的秩减小 $k$ 的误差矩阵 $E_k$ 的最小Frobenius范数相等。
+
+上述定理的另一含义是矩阵 $A$ 的最佳秩 $k$ 逼近，其中 $k < r = rank(A)$，
+
+定义
+$$
+\boldsymbol{A}_{k}=\sum_{i=1}^{k} \sigma_{i} \boldsymbol{u}_{i} \boldsymbol{v}_{i}^{\mathrm{H}}, \quad k<r
+$$
+则 $A_k$ 是如下优化问题的解：
+$$
+\min _{\operatorname{rank}(B)=k}\|\boldsymbol{A}-\boldsymbol{B}\|_{\mathrm{F}}^{2}, \quad k<r
+$$
+且 $\left\|\boldsymbol{A}-\boldsymbol{A}_{k}\right\|_{\mathrm{F}}^{2}=\sigma_{k+1}^{2}+\sigma_{k+2}^{2}+\cdots+\sigma_{r}^{2}$.
+
+上述结果是许多概念和应用的基础。诸如总体最小二乘、数据压缩、图像增强，以及动态系统实现理论等都可归结为最佳低秩矩阵逼近问题。
 
 矩阵奇异值的内在含义：$n \times n$ 矩阵 $A$ 至少有一个零奇异值 $\rightarrow$  $rank(A)\leq
 n-1$ $\rightarrow$ 矩阵 $A$ 奇异。推而广之，一个非正方的矩阵如果有零奇异值，则说明这个长方矩阵一定不是列满秩或行满秩的。这种情况称为矩阵的秩亏缺，它相对于矩阵的满秩是一种奇异现象。总之，无论是正方还是长方矩阵，零奇异值都刻画矩阵的奇性，而最小奇异值一定程度上代表着矩阵接近奇异的程度。
 
 ### 奇异值的性质
 
-...
+...（暂略）
 
 ## 奇异值和其他矩阵概念的关系
 
 ### 和范数
 
-...
+- 矩阵A的谱范数等于A的最大奇异值：$\|\boldsymbol{A}\|_{\text {spec }}=\sigma_{1}$.
+
+- 任何一个矩阵的Frobenius范数等于该矩阵所有非零奇异值平方和的正平方根：
+  $$
+  \begin{aligned}
+  \|\boldsymbol{A}\|_{\mathrm{F}} &=\left[\sum_{i=1}^{m} \sum_{j=1}^{n}\left|a_{i j}\right|^{2}\right]^{1 / 2}=\left\|\boldsymbol{U}^{\mathrm{H}} \boldsymbol{A} \boldsymbol{V}\right\|_{\mathrm{F}} \\
+  &=\|\boldsymbol{\Sigma}\|_{\mathrm{F}}=\sqrt{\sigma_{1}^{2}+\sigma_{2}^{2}+\cdots+\sigma_{r}^{2}}
+  \end{aligned}
+  $$
 
 ### 和行列式
 
-...
+$$
+|\operatorname{det}(\boldsymbol{A})|=|\operatorname{det} \boldsymbol{\Sigma}|=\sigma_{1} \sigma_{2} \cdots \sigma_{n}
+$$
 
 ### 和条件数
 
-...
-
-### 和特征值
-
-...
+- 条件数是一个大于或等于1的正数
+- 奇异矩阵的条件数为无穷大；
+- 条件数虽不是无穷大，但却很大时，A是接近奇异的，即此时其行或列线性相关性很强；
+- $\operatorname{cond}\left(\boldsymbol{A}^{\mathrm{H}} \boldsymbol{A}\right)=\sigma_{1}^{2} / \sigma_{p}^{2}=[\operatorname{cond}(\boldsymbol{A})]^{2}$.
 
 ## 奇异值分解的应用
 
 ### 静态系统的建模
 
-...
+...（暂略）
 
 ### 图像压缩
 

@@ -6,9 +6,21 @@
 
 ## 子空间一般理论
 
-线性空间定义：设 $V$ 是一个非空集合，其元素用向量 $x,y,z$ 等表示；$K$ 是一个数域
+### 线性空间
 
+...（暂略）
 
+### 张成集定理和子空间的基
+
+...（暂略）
+
+### 子空间之间的关系
+
+...（暂略）
+
+### 子空间的夹角和距离
+
+...（暂略）
 
 ## 列空间、行空间与零空间
 
@@ -61,13 +73,39 @@ $$
 
 ### 四个基本子空间之间的关系
 
+- 矩阵A的值域与其列空间相等：
+  $$
+  \operatorname{Range}(\boldsymbol{A})=\operatorname{Col}(\boldsymbol{A})=\operatorname{Span}\left\{\boldsymbol{a}_{1}, \boldsymbol{a}_{2}, \cdots, \boldsymbol{a}_{n}\right\}
+  $$
+
+- 矩阵A的行空间与 $A^H$​ 的列空间相等：
+  $$
+  \operatorname{Row}(\boldsymbol{A})=\operatorname{Col}\left(\boldsymbol{A}^{\mathrm{H}}\right)=\operatorname{Range}\left(\boldsymbol{A}^{\mathrm{H}}\right)
+  $$
+
+- 矩阵A的行空间的正交补等于A的零空间：
+  $$
+  (\operatorname{Row}(\boldsymbol{A}))^{\perp}=\operatorname{Null}(\boldsymbol{A})
+  $$
+
+- 矩阵A的列空间的正交补是 $A^H$​ 的零空间：
+  $$
+  (\operatorname{Col}(A))^{\perp}=\operatorname{Null}\left(A^{H}\right)
+  $$
+
+**定理**：矩阵 $A\in C^{m\times n}$ 的列空间与行空间的维数相等，即为其秩 $rank(A)$，且有
+$$
+rank(A) + dim[Null(A)]= n
+$$
+**证明**：...（暂略）
+
+<img src="./images/1.png" alt="1" style="zoom:33%;" />
+
 ### 子空间的基的构造
 
-
-
-
-
-
+- 初等变换法
+- QR分解法
+- 奇异值分解法
 
 ## 子空间方法
 
@@ -84,17 +122,42 @@ $$
 - 对信号 $s_i$ 的响应向量
 - 加性噪音向量
 
+问题：如何根据 $N$ 个观测数据矢量 $x(1), \cdots,x(N)$ 估计 $r$ 个信号参数 $w_i$.
+
+...（暂略）
+
+子空间方法应用的特点
+
+1. 只需要少数几个奇异向量或者特征向量。使用维数比较小的子空间(信号或噪声子空间)更有效。
+2. 在很多应用中，只需知道矩阵的秩以及奇异向量或者特征向量，并不需要奇异值或者特征值。
+3. 多数情况下，并不需要准确知道奇异向量或者特征向量，而只需知道张成信号子空间或者噪声子空间的基向量即可
+
 ### MUSIC方法
+
+MUSIC算法原理：
+
+MUSIC算法，叫做多信号分类算法(Multiple SignalClassification)，是一种基于特征结构的高分辨率DOA算法。
+
+该算法利用了信号子空间和噪声子空间正交性的特点，构造噪声空间然后通过谱峰搜索来检测信号的波达方向。
+
+需要注意的是，该算法有一个前提，即各个入射信号之，间互不相关，这样才能保证入射信号的协方差矩阵是满秩的。
+
+...（暂略）
 
 ### 求解方程 $X = AS$
 
+矩阵方程
+$$
+X=AS
+$$
+式中，$X_{M\times N}$ 为复矩阵，其元素为观测数据；而复矩阵 $A_{M \times d}$ 和 $S_{d\times  N}$ 均未知。
 
+例如，在阵列信号处理中矩阵A和S分别代表阵列的响应矩阵和希望恢复的信号矩阵。又如，在盲信号分离中，矩阵A和S分别代表信号的线性混合过程和希望分离的信号矩阵。
 
+问题：求解矩阵方程X = AS，得到信号矩阵S。
+前提：矩阵A满列秩，S满行秩。
 
-
-
-
-
+...（暂略）
 
 
 

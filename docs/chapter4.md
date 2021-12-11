@@ -110,17 +110,42 @@ $$
 
 **Gauss-Markov定理**
 
-...
+我们考虑线性方程组 $A \theta = b+e$，其中 $A \in R^{m \times n},\theta \in R^{n \times 1}$ 分别是常数矩阵和未知数向量，$b \in R^{m \times 1}$ 存在随机误差向量 $e = [e_1,e_2,\cdots,e_m]^T$，满足 $E(e) = 0,cov(e) = E(ee^H) = \sigma^2 I$.
+
+则当且仅当 $rank(A) = n$，$\theta$ 存在最优无偏估计 $\hat{\theta}$ 
+$$
+\hat{\boldsymbol{\theta}}=\left({A}^{\mathrm{H}} \boldsymbol{A}\right)^{-1}{A}^{\mathrm{H}} \boldsymbol{b}
+$$
+其方差 $\operatorname{var}(\hat{\boldsymbol{\theta}}) \leqslant \operatorname{var}(\tilde{\boldsymbol{\theta}})$. $\tilde{\boldsymbol{\theta}}$ 是 $A \theta = b+e$ 的任意其他解。
+
+证明：...（暂略）
 
 ## 总体最小二乘
 
-...
+最小二乘：
+$$
+Ax = b+e
+$$
+总体最小二乘：
+
+基本思想：不仅用扰动向量e去干扰数据向量b，而且用干扰矩阵E同时去干扰数据矩阵A，以便校正A和b两者内存在的扰动(误差)并使两个扰动的范数平方保持最小。
+$$
+\begin{aligned}
+(\boldsymbol{A}+\boldsymbol{E}) \boldsymbol{x}=\boldsymbol{b}+\boldsymbol{e} & \Rightarrow([-\boldsymbol{b}, \boldsymbol{A}]+[-e, \boldsymbol{E}])\left[\begin{array}{l}
+1 \\
+\boldsymbol{x}
+\end{array}\right]=0 \\
+& \Rightarrow(\boldsymbol{B}+\boldsymbol{D}) z=0 \\
+& \Rightarrow \min _{D, \boldsymbol{x}}\|\boldsymbol{D}\|_{\mathrm{F}}^{2} \\
+& \text { s.t. }(\boldsymbol{b}+\boldsymbol{e}) \in \operatorname{Range}(\boldsymbol{A}+\boldsymbol{E})
+\end{aligned}
+$$
 
 ## 约束总体最小二乘(选)
 
-
+..（暂略）
 
 ## 结构总体最小二乘(选)
 
-
+..（暂略）
 
